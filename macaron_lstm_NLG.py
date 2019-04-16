@@ -37,11 +37,6 @@ model.add(Dropout(0.2))
 model.add(Dense(Y_modified.shape[1], activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
-model.fit(X_modified, Y_modified, epochs=100, batch_size=100)
-
-model.save_weights('weights_of_macaron_lstm_on_poet_0.h5')
-
-
 model.load_weights('weights_of_macaron_lstm_on_poet_0.h5')
 
 string_mapped = X[102]
@@ -66,4 +61,5 @@ for char in original_String:
     txtt = txtt+char
 print(txtt)
 print('PREDICTION')
-txt
+print(txt)
+
